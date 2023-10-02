@@ -1,13 +1,15 @@
+@import "variables";
+
 .padre-cards{
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
-    font-family: 'Mooli', sans-serif;
+    font-family: $fuente-principal;
 }
 
 .card{
-    background-color: darkcyan;
+    background-color: $color-primario;
     width: 250px;
     height: 350px;
     padding: 20px;
@@ -16,7 +18,7 @@
     z-index: -1;
     img{
         width: 200px;
-        margin: 0;
+        margin: 0px;
     }
     p{
         margin: 15px;
@@ -24,7 +26,8 @@
 }
 
 h1,h2,h3,h4{
-    font-family: 'Mooli', sans-serif;
+    font-family:$fuente-principal;
+    color: $color-titulos;
 }
 
 .descuento{
@@ -39,7 +42,7 @@ body {
 }
 
 .galeria{
-    width: 350px;
+    width: 450px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 15px;
@@ -55,7 +58,6 @@ body {
     flex-direction: column;
     justify-content: left;
     align-items: left;
-    background-color: burlywood;
     text-align: left;
 }
 
@@ -64,7 +66,7 @@ footer{
     color: antiquewhite;
     text-align: left;
     padding: 30px;
-    font-family: 'Mooli', sans-serif;
+    font-family:$fuente-principal;
 }
 
 img{
@@ -76,20 +78,25 @@ img{
     grid-template-columns: 300px;
 }
 
-.miestilo{
-    text-align: center;
-    font-family: 'Mooli', sans-serif;
-}
+
 
 @media (max-width: 480px){
     .miestilo{
         text-align: center;
+        font-size: 15px;
+    }
+}
+@media (min-width: 480px){
+    .miestilo{
+        text-align: center;
+        font-size: 20px;
     }
 }
 
-@media(min-width:768px) and (max-width:700px){
+@media(min-width:480px) and (max-width:1024px){
     .body{
         text-align: center;
+        justify-content: baseline;
     }
 }
 
@@ -101,6 +108,7 @@ img{
     display: flex;
     flex-direction: column;
     gap: 30px;
+    font-size: $fuente-principal;
 }
 
 .contenedor{
@@ -108,9 +116,9 @@ img{
     justify-content: center;
     align-items: center;
     gap: 20px;
-    background-color: cadetblue;
+    background-color: $color-primario;
     color: antiquewhite;
-    font-family: 'Mooli', sans-serif;
+    font-family:$fuente-principal;
     img{
         width: 450px;
     }
@@ -123,20 +131,32 @@ img{
     }
 }
 
-.container{
-    display: block;
+h2{
+    font-size: $size-h1 - 1rem;
+}
+
+h3{
+    font-size: calc($size-h1 / 2)
+}
+
+header{
     background-color: darkcyan;
-    justify-content: space-around;
-    align-items: baseline;
-    opacity: .9;
-    position: sticky;
-    top: 0;
-    padding: 0%;
-    font-family: 'Mooli', sans-serif;
-    width: 100%;
-    color: white;
     .nav-link{
         color: white;
+        font-size: 15px;
     }
 }
+
+@mixin font-type{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.miestilo{
+    @include font-type;
+}
+
+
+
 
