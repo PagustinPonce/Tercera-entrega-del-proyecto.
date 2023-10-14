@@ -16,6 +16,7 @@
     text-align: center;
     position: relative;
     z-index: -1;
+    margin-bottom: 15px;
     img{
         width: 200px;
         margin: 0px;
@@ -42,11 +43,14 @@ body {
 }
 
 .galeria{
-    width: 450px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 15px;
     justify-items: center;
+    img{
+        width: 350px;
+        height: 100%;
+    }
 }
 
 .banner{
@@ -67,10 +71,17 @@ footer{
     text-align: left;
     padding: 30px;
     font-family:$fuente-principal;
+    margin-top: 80px;
+    
 }
 
 img{
-    max-width: 180px;
+    max-width: 250px;
+    min-width: 200px;
+    max-height: 450px;
+    min-height: 200px;
+    justify-content: center;
+    
 }
 
 .grid-container{
@@ -93,11 +104,26 @@ img{
     }
 }
 
+@media (max-width: 700px){
+    .galeria{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+    }
+}
+
 @media(min-width:480px) and (max-width:1024px){
     .body{
         text-align: center;
         justify-content: baseline;
     }
+}
+
+.form-group textarea{
+    width: 100%;
+    height: auto;
+    max-width: 100%;
 }
 
 .border{
@@ -115,6 +141,7 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
     gap: 20px;
     background-color: $color-primario;
     color: antiquewhite;
